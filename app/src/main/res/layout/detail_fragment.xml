@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteBgColor">
+
+    <ImageView
+        android:contentDescription="@string/close"
+        android:id="@+id/closeIcon"
+        android:layout_width="20dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/characterPhoto"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="@+id/detailName"
+        app:layout_constraintTop_toBottomOf="@+id/detailName"
+        app:shapeAppearance="@style/CircleImage" />
+
+    <TextView
+        android:id="@+id/detailDesc"
+        style="@style/detailText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:text="@string/alive_human"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/characterPhoto"
+        app:layout_constraintTop_toTopOf="@+id/characterPhoto" />
+
+    <TextView
+        android:id="@+id/detailGender"
+        style="@style/detailGenderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:text="@string/male"
+        app:layout_constraintEnd_toEndOf="@+id/detailDesc"
+        app:layout_constraintStart_toStartOf="@+id/detailDesc"
+        app:layout_constraintTop_toBottomOf="@+id/detailDesc" />
+
+    <TextView
+        android:id="@+id/detailName"
+        style="@style/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/morty_smith"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/closeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/closeIcon" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/expandableLayout"
+        android:background="@drawable/expanded_layout_bg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:minHeight="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterPhoto">
+
+        <RelativeLayout
+            android:id="@+id/clickableArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/expandedLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/expandableLayoutText"
+                style="@style/listItemText"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:gravity="start|center"
+                android:text="@string/episodes" />
+
+            <ImageView
+                android:contentDescription="@string/expand"
+                android:id="@+id/expandIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_resources_nav_bar_back" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:animateLayoutChanges="true"
+            android:id="@+id/expandedLayout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@color/mainColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

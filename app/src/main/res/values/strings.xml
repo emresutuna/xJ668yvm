@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">xJ668yvm</string>
+    <string name="alive_human">Alive, Human</string>
+    <string name="male">Male</string>
+    <string name="close">close</string>
+    <string name="morty_smith">Morty Smith</string>
+    <string name="episodes">Episodes</string>
+    <string name="expand">expand</string>
 </resources>

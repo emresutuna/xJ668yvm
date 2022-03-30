@@ -13,4 +13,36 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="titleText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/biryani_bold</item>
+    </style>
+
+    <style name="detailText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/biryani_bold</item>
+    </style>
+
+    <style name="detailGenderText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/biryani_bold</item>
+    </style>
+
+    <style name="listItemText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:fontFamily">@font/biryani_bold</item>
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CornerRadiusImage" parent="">
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>
