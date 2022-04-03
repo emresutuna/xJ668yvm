@@ -2,7 +2,7 @@ package com.example.xj668yvm.activities.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Results(
+data class Characters(
     @SerializedName("id") var id: Int? = null,
     @SerializedName("name") var name: String? = null,
     @SerializedName("status") var status: String? = null,

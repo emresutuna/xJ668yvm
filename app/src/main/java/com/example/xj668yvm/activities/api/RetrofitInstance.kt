@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInstance {
     companion object {
-        const val MAIN_URL = "https://run.mocky.io/"
+        const val MAIN_URL = "https://rickandmortyapi.com/"
         private fun retrofit(): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(MAIN_URL)

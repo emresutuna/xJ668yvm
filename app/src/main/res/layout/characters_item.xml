@@ -9,12 +9,14 @@
         android:id="@+id/character_image"
         android:layout_width="0dp"
         android:layout_height="160dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:shapeAppearanceOverlay="@style/CornerRadiusImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/itemName"
         style="@style/listItemText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

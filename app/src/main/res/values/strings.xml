@@ -6,4 +6,5 @@
     <string name="morty_smith">Morty Smith</string>
     <string name="episodes">Episodes</string>
     <string name="expand">expand</string>
+    <string name="retry">retry</string>
 </resources>

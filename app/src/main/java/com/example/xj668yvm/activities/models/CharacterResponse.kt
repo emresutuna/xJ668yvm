@@ -7,7 +7,7 @@ data class CharacterResponse(
     var info: Info? = Info(),
 
     @SerializedName("results")
-    var results: ArrayList<Results> = arrayListOf()
+    var results: ArrayList<Characters> = arrayListOf()
 ) {
 
 }

@@ -7,12 +7,12 @@
     android:background="@color/whiteBgColor">
 
     <ImageView
-        android:contentDescription="@string/close"
         android:id="@+id/closeIcon"
-        android:layout_width="20dp"
+        android:layout_width="26dp"
         android:layout_height="34dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/close"
         android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,10 +67,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/expandableLayout"
-        android:background="@drawable/expanded_layout_bg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:background="@drawable/expanded_layout_bg"
         android:minHeight="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,6 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@id/expandedLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -92,33 +91,59 @@
                 android:id="@+id/expandableLayoutText"
                 style="@style/listItemText"
                 android:layout_width="wrap_content"
-                android:layout_alignParentStart="true"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="16dp"
                 android:gravity="start|center"
                 android:text="@string/episodes" />
 
             <ImageView
-                android:contentDescription="@string/expand"
                 android:id="@+id/expandIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/expand"
                 android:src="@drawable/ic_resources_nav_bar_back" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:visibility="gone"
-            android:animateLayoutChanges="true"
-            android:id="@+id/expandedLayout"
+        <ScrollView
+            android:id="@+id/expandedArea"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:background="@color/mainColor"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            android:maxHeight="200dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></RelativeLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clickableArea">
+
+            <LinearLayout
+                android:id="@+id/expandedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:animateLayoutChanges="true"
+                android:maxHeight="200dp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+        </ScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <RelativeLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:visibility="gone">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
