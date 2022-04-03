@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.xj668yvm.R
@@ -130,15 +131,17 @@ class DetailFragment : Fragment() {
         binding.closeIcon.setOnClickListener {
             requireActivity().finish()
         }
-        binding.clickableArea.setOnClickListener {
+        binding.expandableLayout.setOnClickListener {
             if (isExpanded){
                 binding.expandedLayout.visibility=View.VISIBLE
                 binding.expandedArea.visibility=View.VISIBLE
+                binding.expandIcon.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_close_dropdown))
                 isExpanded=false
             }else{
                 binding.expandedLayout.visibility=View.GONE
                 binding.expandedArea.visibility=View.GONE
                 isExpanded=true
+                binding.expandIcon.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_resources_nav_bar_back))
             }
         }
     }

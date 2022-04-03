@@ -33,7 +33,6 @@ class CharactersAdapter(private var context: Context) :
         val item = getItem(position)
         item?.let { holder.bindCharacters(it) }
         holder.itemView.setOnClickListener {
-            Toast.makeText(context,item!!.id.toString(),Toast.LENGTH_SHORT).show()
             val intent=Intent(context,DetailActivity::class.java)
             intent.putExtra("id",item!!.id)
             context.startActivity(intent)

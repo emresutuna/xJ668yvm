@@ -21,7 +21,7 @@ import com.example.xj668yvm.databinding.MainFragmentBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class MainFragment : Fragment(), CharactersAdapter.CharacterClickListener {
+class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -74,8 +74,6 @@ class MainFragment : Fragment(), CharactersAdapter.CharacterClickListener {
             .get(MainViewModel::class.java)
     }
 
-    override fun onCharacterClicked(id: Int) {
-        Toast.makeText(requireContext(), id.toString(), Toast.LENGTH_SHORT).show()
-    }
+
 
 }
